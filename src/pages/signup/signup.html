@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="welcomePage()">
+        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="titu1">{{ '------ Página de Registro ------' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <img src="../assets/img/Vestibulinho1.jpg">
+  <form (submit)="doSignup()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Nome' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Celular' | translate }}</ion-label>
+        <ion-input type="number" [(ngModel)]="account.number" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label fixed>{{ 'Senha' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Data de nascimento' | translate }}</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Sexo</ion-label>
+        <ion-select>
+          <ion-option value="f">Feminino</ion-option>
+          <ion-option value="m">Masculino</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Qual seu Curso técnico </ion-label>
+        <ion-select multiple="true" okText="Ok" cancelText="Cancelar">
+          <ion-option>Logística</ion-option>
+          <ion-option>Informatica para Internet</ion-option>
+          <ion-option>Desenvolvimento de Sistemas</ion-option>
+          <ion-option>Secretariado</ion-option>
+          <ion-option>Marketing</ion-option>
+          <ion-option>Administração</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <div padding>
+        <button ion-button class="signUpBtn" block>{{ 'REGISTRAR-SE' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>
+<ion-footer class="rodape1">
+  <ion-title>RedeEtec</ion-title>
+</ion-footer>
